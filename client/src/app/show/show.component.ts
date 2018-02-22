@@ -7,6 +7,7 @@ import { HttpService } from '../http.service';
   styleUrls: ['./show.component.css']
 })
 export class ShowComponent implements OnInit {
+
   authors : any
 
   constructor( private _httpService : HttpService) { }
@@ -29,9 +30,4 @@ export class ShowComponent implements OnInit {
     this.showALL()
   }
 
-  saveIDtoService(a_ID){
-    this._httpService.authorID = a_ID
-    console.log(a_ID)
-  }
-  
 }

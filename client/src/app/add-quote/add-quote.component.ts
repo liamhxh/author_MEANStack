@@ -12,6 +12,7 @@ export class AddQuoteComponent implements OnInit {
 
   newQuote = {}
   author = {}
+  a_id : any
 
   constructor(
     private _httpService: HttpService,
@@ -20,26 +21,26 @@ export class AddQuoteComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    let observabel = this._httpService.findOneAuthorByID(this._httpService.authorID)
-    observabel.subscribe(data => {
-      console.log(data);
+    this._route.params.subscribe((params: Params) => { this.a_id = params.id })
+    this._httpService.findOneAuthorByID(this.a_id).subscribe(data => {
       this.author = data
     })
     this.newQuote = {
       quote: "",
       votes:0
     }
-    console.log(this.author['quotes'])
+    console.log(this.author);
+    
   }
 
   onSubmit() {
     this.author['quotes'].push(this.newQuote);
-    this._httpService.updateOneAuthor(this._httpService.authorID, this.author).subscribe(data => {
+    this._httpService.updateOneAuthor(this.a_id, this.author).subscribe(data => {
       if (data["error"]) {
         console.log(data["error"]);
       } else {
         console.log(data)
-        this._router.navigate(['/showAuthor'])
+        this._router.navigate(['/showAuthor/',this.a_id])
       }
     })
   }

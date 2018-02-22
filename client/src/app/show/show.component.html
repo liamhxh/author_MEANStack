@@ -22,10 +22,10 @@
       <tbody>
         <tr *ngFor = "let a of authors; let i = index">
           <th scope="row">{{i+1}}</th>
-          <td><a [routerLink]= "['../showAuthor']" (click) = "saveIDtoService(a._id)">{{a.name}}</a></td>
+          <td><a [routerLink]= "['/showAuthor', a._id]">{{a.name}}</a></td>
           <td>{{a.createdAt | date : "MMM/dd/yyyy E HH.mm.ss"}}</td>
           <td>
-            <button [routerLink] = "['../edit']" (click) = "saveIDtoService(a._id)">Edit</button> 
+            <button [routerLink] = "['/edit', a._id ]">Edit</button> 
             <button (click)="deleteThisAuthor(a._id)">Delete</button></td>
         </tr>
       </tbody>

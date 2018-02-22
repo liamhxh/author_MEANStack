@@ -3,9 +3,6 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class HttpService {
-
-  authorID : any
-
   constructor(private _http : HttpClient) { }
 
   getAllAuthors(){

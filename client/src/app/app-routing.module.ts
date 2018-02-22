@@ -12,8 +12,8 @@ const routes: Routes = [
   {path: 'new', component: NewComponent},
   {path: 'show', component: ShowComponent},
   {path: 'edit', component: EditComponent},
-  {path: 'showAuthor', component: ShowAuthorComponent},
-  {path: 'addQuote', component: AddQuoteComponent},
+  {path: 'showAuthor/:id', component: ShowAuthorComponent},
+  {path: 'addQuote/:id', component: AddQuoteComponent},
   {path: '', pathMatch:"full", redirectTo:"/show"},
 ];
 

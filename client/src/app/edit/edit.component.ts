@@ -10,6 +10,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router'
 export class EditComponent implements OnInit {
 
   author = {};
+  a_id : any
 
   constructor(
     private _httpService : HttpService,
@@ -18,17 +19,14 @@ export class EditComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this._httpService.findOneAuthorByID(this._httpService.authorID).subscribe(data => {
-      if(data["error"]){
-        console.log(data["error"])
-      }else{
-        this.author = data
-      }
+    this._route.params.subscribe((params: Params) => { this.a_id = params.id })
+    this._httpService.findOneAuthorByID(this.a_id).subscribe(data => {
+      this.author = data
     })
   }
 
   onSubmit(){
-    this._httpService.updateOneAuthor(this._httpService.authorID, this.author).subscribe(data =>{
+    this._httpService.updateOneAuthor(this.a_id, this.author).subscribe(data =>{
       if(data["error"]){
         console.log(data["error"]);
       }else{

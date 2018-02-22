@@ -10,7 +10,7 @@
 <body>
   <div class="container">
     <button [routerLink]="['/show']">Back to home</button>
-    <button [routerLink]="['/addQuote']">Add a quote to this author</button>
+    <button [routerLink]="['/addQuote',author._id]">Add a quote to this author</button>
     <h3>Author Name: {{author.name}}</h3>
         
         <table class="table">
