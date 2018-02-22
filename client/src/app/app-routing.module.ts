@@ -3,16 +3,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { NewComponent } from './new/new.component';
 import { ShowComponent } from './show/show.component';
 import { EditComponent } from './edit/edit.component';
-import { DeleteComponent } from './delete/delete.component';
+import {ShowAuthorComponent} from './show-author/show-author.component'
+import {AddQuoteComponent} from './add-quote/add-quote.component'
+
 
 
 const routes: Routes = [
-  // {path: "alpha" , component : AlphaComponent},
-  // {path: "beta" , component : BetaComponent}
   {path: 'new', component: NewComponent},
   {path: 'show', component: ShowComponent},
   {path: 'edit', component: EditComponent},
-  {path: 'delete', component: DeleteComponent},
+  {path: 'showAuthor', component: ShowAuthorComponent},
+  {path: 'addQuote', component: AddQuoteComponent},
   {path: '', pathMatch:"full", redirectTo:"/show"},
 ];
 

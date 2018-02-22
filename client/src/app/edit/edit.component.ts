@@ -10,7 +10,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router'
 export class EditComponent implements OnInit {
 
   author = {};
-  
 
   constructor(
     private _httpService : HttpService,

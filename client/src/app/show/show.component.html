@@ -15,14 +15,18 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Author Name</th>
+          <th scope="col">Created Time</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor = "let a of authors; let i = index">
           <th scope="row">{{i+1}}</th>
-          <td>{{a.name}}</td>
-          <td><button [routerLink] = "['../edit']" (click) = "saveIDtoService(a._id)">Edit</button> <button (click)="deleteThisAuthor(a._id)">Delete</button></td>
+          <td><a [routerLink]= "['../showAuthor']" (click) = "saveIDtoService(a._id)">{{a.name}}</a></td>
+          <td>{{a.createdAt | date : "MMM/dd/yyyy E HH.mm.ss"}}</td>
+          <td>
+            <button [routerLink] = "['../edit']" (click) = "saveIDtoService(a._id)">Edit</button> 
+            <button (click)="deleteThisAuthor(a._id)">Delete</button></td>
         </tr>
       </tbody>
       </table>

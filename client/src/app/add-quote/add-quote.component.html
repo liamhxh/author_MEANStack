@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
+  <title>QUOTE</title>
+</head>
+<body>
+  <div class="container">
+    <button [routerLink]="['/show']">Back to home</button>
+    <form (submit)= "onSubmit()">
+      <h2>Add a quote</h2>
+      <label>Quote:</label>
+      <input type="text" name="newQuote.quote" [(ngModel)]="newQuote.quote" />
+      <input type="submit" value="Add quote" />
+    </form>
+  </div>
+</body>
+</html>
+

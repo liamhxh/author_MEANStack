@@ -9,7 +9,8 @@ app.use(express.static(__dirname + "/client/dist"))
 mongoose.connect('mongodb://localhost/authors')
 
 let authorSchema = new mongoose.Schema({
-    name: {type : String}
+    name: {type : String},
+    quotes: [],
 }, {timestamps:true})
 
 let Author = mongoose.model('author', authorSchema)
@@ -61,9 +62,10 @@ app.get('/authors/:id', function (req, res) {
 })
 
 app.put('/authors/:id', function (req, res) {
-    let author = {};
-    author.name = req.body.name;
-    Author.update({_id:req.params.id}, author, function(err, data){
+    // let author = {};
+    // author.name = req.body.name;
+    // author.quotes = req.body.newQuote.quote
+    Author.update({_id:req.params.id}, req.body, function(err, data){
         if(err){
             res.json({error:err})
         }else{

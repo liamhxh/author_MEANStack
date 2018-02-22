@@ -13,6 +13,8 @@ import { NewComponent } from './new/new.component';
 import { EditComponent } from './edit/edit.component';
 import { ShowComponent } from './show/show.component';
 import { DeleteComponent } from './delete/delete.component';
+import { ShowAuthorComponent } from './show-author/show-author.component';
+import { AddQuoteComponent } from './add-quote/add-quote.component';
 
 
 
@@ -23,6 +25,8 @@ import { DeleteComponent } from './delete/delete.component';
     EditComponent,
     ShowComponent,
     DeleteComponent,
+    ShowAuthorComponent,
+    AddQuoteComponent,
   ],
   imports: [
     BrowserModule,

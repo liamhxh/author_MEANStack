@@ -16,14 +16,14 @@ export class NewComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.author = {name : ""}
+    this.author = {name : "", quotes:[]}
   }
 
   onSubmit(){
     let observable = this._httpService.addNewAuthor(this.author)
     observable.subscribe(data => {
       console.log('got data from post', data)
-      this.author = {name:""};
+      this.author = {name:"", quotes : []};
       this._router.navigate(['/show'])
     })
   }

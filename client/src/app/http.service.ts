@@ -28,6 +28,4 @@ export class HttpService {
     return this._http.put('/authors/'+authorID, author)
   }
 
-  
-
 }
